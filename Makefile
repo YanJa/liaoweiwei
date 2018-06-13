@@ -2,7 +2,7 @@ VUE_DIR=$(PWD)/vue/
 SRC_DIR=$(PWD)/src/
 
 FROM_DIR=$(VUE_DIR)dist/
-TO_DIR=$(SRC_DIR)vue/static/vue/dist/
+TO_DIR=$(SRC_DIR)static/vue/
 
 build:
 	docker-compose build
@@ -43,4 +43,4 @@ collectstatic:
 	docker exec dz01 /bin/sh -c "python manage.py collectstatic --noinput"  
 
 build-vue:
-	npm --prefix $(VUE_DIR) run build && cp -r $(FROM_DIR) $(TO_DIR)
+	npm --prefix $(VUE_DIR) run build; cp -r $(FROM_DIR) $(TO_DIR)
