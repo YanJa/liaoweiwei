@@ -9,3 +9,5 @@
 */__pycache__
 vdocker-django/
 
+# 
+npm-debug.log
